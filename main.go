@@ -81,7 +81,8 @@ func main() {
 		return
 	case err := <-errCh:
 		if err != nil {
-			l.Fatal(err)
+			// l.Fatal(err)	//Fatal is equivalent to Print() followed by a call to os.Exit(1).
+			l.Panic(err)
 		}
 	}
 }
